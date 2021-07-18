@@ -11,9 +11,9 @@
         android:theme="@style/Theme.Biowit">
         <activity android:name=".Bio_ForgetPass"></activity>
         <activity android:name=".Bio_SignUp" />
-        <activity android:name=".Bio_LogIn" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".MM_Settings" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Bio_LogIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

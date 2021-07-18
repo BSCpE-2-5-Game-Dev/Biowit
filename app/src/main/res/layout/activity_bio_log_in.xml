@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/delius_unicase"
-        android:text="Please Sign in to Continue!"
+        android:text="Please Sign in to Continue"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -53,7 +53,8 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:hint="Username"
+            android:hint="Username / Email Address"
+            android:textColorHint="#696969"
             android:textColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -70,6 +71,7 @@
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:hint="Password"
+            android:textColorHint="#696969"
             android:textColor="@color/black"
             app:passwordToggleEnabled="true">
 
@@ -99,11 +101,11 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:text="Sign In"
+            android:text="Log in"
             android:textAlignment="center"
-            android:textColor="#fff"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            app:backgroundTint="#000000" />
+            app:backgroundTint="@android:color/holo_green_light" />
 
     </LinearLayout>
 
@@ -125,7 +127,7 @@
         android:layout_gravity="center"
         android:text="sign up"
         android:textAlignment="center"
-        android:textColor="#fff"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="20sp"
         app:backgroundTint="#000000" />
 

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Biowit">
-        <activity android:name=".Bio_ForgetPass"></activity>
+        <activity android:name=".MM_Profile"></activity>
+        <activity android:name=".Bio_ForgetPass" />
         <activity android:name=".Bio_SignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MM_Settings" />

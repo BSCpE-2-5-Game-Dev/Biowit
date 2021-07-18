@@ -25,25 +25,38 @@ public class MM_Leaderboard extends AppCompatActivity {
         ImageButton imgbtn_Play = findViewById(R.id.imgbtn_Play);
         ImageButton imgbtn_Cell_Quest = findViewById(R.id.imgbtn_Cell_Quest);
         ImageButton imgbtn_Settings =  findViewById(R.id.imgbtn_Settings);
+        ImageButton imgbtn_Profile = findViewById(R.id.imgbtn_Profile);
 
-        imgbtn_Shop.setOnClickListener(v -> {
-            Intent Shop_open = new Intent(MM_Leaderboard.this, MM_Shop.class);
-            startActivity(Shop_open);
+        // the "finish()" function will disable the back button to go back in previous activity.
+
+        imgbtn_Profile.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Profile.class));
+            finish();
         });
 
-        imgbtn_Achievements.setOnClickListener(v -> {
-            Intent Achievements_open = new Intent(MM_Leaderboard.this, MM_Achievements.class);
-            startActivity(Achievements_open);
+        imgbtn_Settings.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Settings.class));
+            finish();
+        });
+
+        imgbtn_Shop.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Shop.class));
+            finish();
         });
 
         imgbtn_Play.setOnClickListener(v -> {
-            Intent Play_open = new Intent(MM_Leaderboard.this, MM_Play.class);
-            startActivity(Play_open);
+            startActivity(new Intent(getApplicationContext(), MM_Play.class));
+            finish();
+        });
+
+        imgbtn_Achievements.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Achievements.class));
+            finish();
         });
 
         imgbtn_Cell_Quest.setOnClickListener(v -> {
-            Intent Cell_Quest_open = new Intent(MM_Leaderboard.this, MM_CellQuest.class);
-            startActivity(Cell_Quest_open);
+            startActivity(new Intent(getApplicationContext(), MM_CellQuest.class));
+            finish();
         });
     }
 }

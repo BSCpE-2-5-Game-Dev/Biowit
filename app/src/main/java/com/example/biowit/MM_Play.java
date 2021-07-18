@@ -25,25 +25,38 @@ public class MM_Play extends AppCompatActivity {
         ImageButton imgbtn_Cell_Quest =  findViewById(R.id.imgbtn_Cell_Quest);
         ImageButton imgbtn_Leaderboard =  findViewById(R.id.imgbtn_Leaderboard);
         ImageButton imgbtn_Settings =  findViewById(R.id.imgbtn_Settings);
+        ImageButton imgbtn_Profile = findViewById(R.id.imgbtn_Profile);
+
+        // the "finish()" function will disable the back button to go back in previous activity.
+
+        imgbtn_Profile.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Profile.class));
+            finish();
+        });
+
+        imgbtn_Settings.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), MM_Settings.class));
+            finish();
+        });
 
         imgbtn_Shop.setOnClickListener(v -> {
-            Intent Shop_open = new Intent(MM_Play.this, MM_Shop.class);
-            startActivity(Shop_open);
+            startActivity(new Intent(getApplicationContext(), MM_Shop.class));
+            finish();
         });
 
         imgbtn_Achievements.setOnClickListener(v -> {
-            Intent Achievements_open = new Intent(MM_Play.this, MM_Achievements.class);
-            startActivity(Achievements_open);
+            startActivity(new Intent(getApplicationContext(), MM_Achievements.class));
+            finish();
         });
 
         imgbtn_Cell_Quest.setOnClickListener(v -> {
-            Intent Cell_Quest_open = new Intent(MM_Play.this, MM_CellQuest.class);
-            startActivity(Cell_Quest_open);
+            startActivity(new Intent(getApplicationContext(), MM_CellQuest.class));
+            finish();
         });
 
         imgbtn_Leaderboard.setOnClickListener(v -> {
-            Intent Leaderboard_open = new Intent(MM_Play.this, MM_Leaderboard.class);
-            startActivity(Leaderboard_open);
+            startActivity(new Intent(getApplicationContext(), MM_Leaderboard.class));
+            finish();
         });
     }
 }

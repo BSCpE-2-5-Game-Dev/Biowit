@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082009386731",
+    "project_id": "biowit-log-in",
+    "storage_bucket": "biowit-log-in.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082009386731:android:1302caa52a8c44241588ae",
+        "android_client_info": {
+          "package_name": "com.example.biowit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082009386731-f88iesf15puuiss1aqhe99us402o9rl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE2eHRBInMstBGFe0MT_nutwECv_oD7Ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082009386731-f88iesf15puuiss1aqhe99us402o9rl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

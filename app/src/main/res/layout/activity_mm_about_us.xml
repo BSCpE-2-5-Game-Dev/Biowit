@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/settings_bg"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".MM_AboutUs">
+
+
+    <ScrollView
+        android:id="@+id/scrollvw_About_Us"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imgbtn_AU_Back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/back_btn" />
+
+            <TextView
+                android:id="@+id/lbl_About_Us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/press_start_2p"
+                android:text="ABOUT US"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="86dp" />
+
+            <ImageView
+                android:id="@+id/img_ABPV_Logo"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0sp"
+                app:srcCompat="@drawable/team_logo"
+                tools:layout_editor_absoluteX="105dp"
+                tools:layout_editor_absoluteY="123dp" />
+
+            <TextView
+                android:id="@+id/lbl_Who_we_are"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30sp"
+                android:fontFamily="@font/press_start_2p"
+                android:text="WHO WE ARE"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="182dp"
+                tools:layout_editor_absoluteY="331dp" />
+
+            <TextView
+                android:id="@+id/txt_Message"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/inknut_antiqua_semibold"
+                android:text="Formed in 2021, ABPV is a partnership company based in the Philippines consisting of four hardworking individuals. As a hardworking individuals a helping hand is a relief to do your task efficiently and that what’s the ABPV want to be visualized, as a helping hand. We develop mobile applications that assists our user to upgrade their lifestyle and well-being. Our products was built for all types of people and meet their needs in their pursuit in life together with a high-performing applications. "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="171dp"
+                tools:layout_editor_absoluteY="368dp" />
+
+            <TextView
+                android:id="@+id/lbl_Meet"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/press_start_2p"
+                android:text="MEET THE TEAM"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/img_Lead"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/lead_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lemonada_semibold"
+                android:text="Khalid Badato (PROJECT MANAGER)"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pt_serif_caption"
+                android:text="badatokhalid@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/img_UI"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/dan_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lemonada_semibold"
+                android:text="Daniella Mae Alviar (FRONT END MANAGER)"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pt_serif_caption"
+                android:text="alviardaniella@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/img_Dev"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/dev_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lemonada_semibold"
+                android:text="Edwin Joseph Politico (BACK END MANAGER)"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pt_serif_caption"
+                android:text="edwinjosephpolitico@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/img_QA"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/jade_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lemonada_semibold"
+                android:text="Jade Ryahn Varona (QA MANAGER)"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pt_serif_caption"
+                android:text="jadevarona@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

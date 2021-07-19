@@ -24,10 +24,11 @@
             android:padding="40dp">
 
             <TextView
-                android:id="@+id/lbl_Please4"
+                android:id="@+id/lbl_Sign_Up_Form"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/delius_unicase_bold"
                 android:text="Sign Up Form"
                 android:textAlignment="center"
@@ -39,10 +40,10 @@
 
             <TextView
                 android:id="@+id/lbl_SU_Please"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/delius_unicase"
                 android:text="Please fill up the following:"
                 android:textAlignment="center"
@@ -50,7 +51,7 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/lbl_Please4" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_Sign_Up_Form" />
 
             <ImageView
                 android:id="@+id/logo_Biowit"
@@ -64,24 +65,25 @@
 
             <Button
                 android:id="@+id/btn_Register"
-                android:layout_width="300dp"
+                android:layout_width="290dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="40dp"
                 android:text="Register"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:backgroundTint="@android:color/holo_green_light"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_ConfirmPass" />
+                app:layout_constraintTop_toBottomOf="@+id/outline_password" />
 
             <EditText
                 android:id="@+id/txtbx_SU_FullName"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="295dp"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
                 android:ems="10"
                 android:hint="Full  Name"
                 android:inputType="textPersonName"
@@ -89,28 +91,13 @@
                 android:textColorHint="#696969"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/txtbx_SU_Uname"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Username"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textColorHint="#696969"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_Email" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_SU_Please" />
 
             <EditText
                 android:id="@+id/txtbx_SU_Pass"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
@@ -119,28 +106,36 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_Uname" />
+                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_Email" />
 
-            <EditText
-                android:id="@+id/txtbx_SU_ConfirmPass"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ems="10"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outline_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:hint="Confirm Password"
-                android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textColorHint="#696969"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_Pass" />
+                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_Pass"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtbx_SU_ConfirmPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <EditText
                 android:id="@+id/txtbx_SU_Email"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
                 android:ems="10"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"
@@ -151,6 +146,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_FullName" />
 
+            <ImageButton
+                android:id="@+id/btn_SU_Back"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/back_btn"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_Register" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

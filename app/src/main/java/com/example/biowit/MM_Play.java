@@ -8,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.example.biowit.ChapterPlay.ChapterSelect;
+
 public class MM_Play extends AppCompatActivity {
 
     @Override
@@ -26,6 +28,7 @@ public class MM_Play extends AppCompatActivity {
         ImageButton imgbtn_Leaderboard =  findViewById(R.id.imgbtn_Leaderboard);
         ImageButton imgbtn_Settings =  findViewById(R.id.imgbtn_Settings);
         ImageButton imgbtn_Profile = findViewById(R.id.imgbtn_Profile);
+        ImageButton imgbtn_Chapter_Select = findViewById(R.id.imgbtn_Chapter_Select);
 
         // the "finish()" function will disable the back button to go back in previous activity.
 
@@ -56,6 +59,11 @@ public class MM_Play extends AppCompatActivity {
 
         imgbtn_Leaderboard.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Leaderboard.class));
+            finish();
+        });
+
+        imgbtn_Chapter_Select.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), PL_ChapSelect.class));
             finish();
         });
     }

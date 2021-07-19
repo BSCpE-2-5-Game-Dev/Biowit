@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mm_bg"
+    android:background="@drawable/chap_select_bg_c"
     tools:context=".MM_Play">
 
 
@@ -16,9 +16,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/settings_btn"
+        android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lbl_Cell_Points"
@@ -28,6 +28,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="40dp"
         android:text="9999999x"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/img_Cell_Points"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,13 +58,13 @@
         android:id="@+id/lbl_Play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:text="Chapter Play"
+        android:layout_marginBottom="200dp"
+        android:text="Chapter Select"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imgbtn_Shop"
@@ -117,6 +118,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5 "
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_Chapter_Select"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="175dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/small_chsel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

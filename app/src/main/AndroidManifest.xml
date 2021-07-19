@@ -5,15 +5,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="gumana ka na"
+        android:label="Biowit"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Biowit">
+        <activity android:name=".CS_Cell"></activity>
+        <activity android:name=".PL_ChapSelect" />
         <activity android:name=".MM_Profile" />
-<<<<<<< HEAD
-        <activity android:name=".Bio_ForgetPass" />
-=======
->>>>>>> 3b72fec56454fb1cd9921ce3b08e8274d7d13a39
         <activity android:name=".Bio_SignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MM_Settings" />

@@ -22,7 +22,7 @@ public class ChapterSelect extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide(); // hides the action bar.
 
-        Button btn_Ch1LessonSelect = findViewById(R.id.btn_cell);
+        Button btn_Ch1LessonSelect = findViewById(R.id.btn_Cell);
         btn_Ch1LessonSelect.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), Ch1LessonSelect.class));
             finish();

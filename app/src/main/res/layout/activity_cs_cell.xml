@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChapterPlay.ChapterSelect">
+    tools:context=".CS_Cell">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,10 +17,10 @@
             android:id="@+id/lbl_Select_Chap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#99CC00"
+            android:background="@color/black"
             android:gravity="center_horizontal"
-            android:text="SELECT CHAPTER"
-            android:textColor="@color/black"
+            android:text="SELECT LESSON"
+            android:textColor="#99cc00"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -42,18 +42,18 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    app:srcCompat="@drawable/cell" />
+                    app:srcCompat="@drawable/cell_theory" />
 
                 <Button
-                    android:id="@+id/btn_Cell"
+                    android:id="@+id/btn_Cell_Theo"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="50dp"
-                    android:text="CHAPTER 1: CELL"
-                    android:textColor="@color/black"
+                    android:text="LESSON 1: CELL THEORY"
+                    android:textColor="#99CC00"
                     android:textStyle="bold"
-                    app:backgroundTint="@android:color/holo_green_light" />
+                    app:backgroundTint="@color/black" />
 
                 <ImageView
                     android:id="@+id/img_Bio_Mole"
@@ -61,18 +61,18 @@
                     android:layout_height="180dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/bio_molecules" />
+                    android:src="@drawable/cell_structure" />
 
                 <Button
-                    android:id="@+id/btn_Bio_Mole"
+                    android:id="@+id/btn_Cell_Struc"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="50dp"
-                    android:text="CHAPTER 2: BIOLOGICAL MOLECULES"
-                    android:textColor="@color/black"
+                    android:text="LESSON 2: CELL STRUCTURE"
+                    android:textColor="#99CC00"
                     android:textStyle="bold"
-                    app:backgroundTint="#99cc00" />
+                    app:backgroundTint="@color/black" />
 
                 <ImageView
                     android:id="@+id/img_Energy"
@@ -80,23 +80,26 @@
                     android:layout_height="180dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/energy_transformation" />
+                    android:src="@drawable/prokaryotes" />
 
                 <Button
-                    android:id="@+id/btn_Energy"
+                    android:id="@+id/btn_Pro_Euk"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="50dp"
-                    android:text="CHAPTER 3: ENERGY TRANSFORMATION"
-                    android:textColor="@color/black"
+                    android:text="LESSON 3: PROKARYOTES VS. EUKARYOTES"
+                    android:textColor="#99CC00"
                     android:textStyle="bold"
-                    app:backgroundTint="#99cc00" />
+                    app:backgroundTint="@color/black" />
 
             </LinearLayout>
-
         </ScrollView>
 
+
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

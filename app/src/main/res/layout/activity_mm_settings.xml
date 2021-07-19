@@ -4,6 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/settings_bg"
     tools:context=".MM_Settings">
+
+
+    <TextView
+        android:id="@+id/lbl_ST_About_Us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="10dp"
+        android:text="About Us"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtn_About_Us"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Settings"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_ST_Back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/back_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_About_Us"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/about_us_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/swch_ST_Music"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="Music"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Settings" />
+
+    <Switch
+        android:id="@+id/swch_ST_SoundFX"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Sound FX"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swch_ST_Music" />
+
+    <Switch
+        android:id="@+id/swch_ST_Vibrations"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Vibrations"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swch_ST_SoundFX" />
+
+    <Switch
+        android:id="@+id/swch_ST_Hint"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Hint"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swch_ST_Vibrations" />
+
+    <Switch
+        android:id="@+id/swch_ST_Notifications"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Notifications"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swch_ST_Hint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

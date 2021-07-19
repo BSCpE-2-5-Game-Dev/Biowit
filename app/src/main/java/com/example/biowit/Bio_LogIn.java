@@ -36,7 +36,7 @@ public class Bio_LogIn extends AppCompatActivity {
         //Firebase class, texbox/es and button/s declaration
         FirebaseAuth FbaseAuth_LI = FirebaseAuth.getInstance();
         TextInputEditText txtbx_Username = findViewById(R.id.txtbx_Username);
-        TextInputEditText txtbx_Password = findViewById(R.id.txtbx_Password);
+        TextInputEditText txtbx_Password = findViewById(R.id.txtbx_SU_ConfirmPass);
         Button btn_Log_In = findViewById(R.id.btn_Log_In);
         Button btn_Forget_Pass = findViewById(R.id.btn_Forget_Pass);
         Button btn_Sign_Up = findViewById(R.id.btn_Sign_Up);

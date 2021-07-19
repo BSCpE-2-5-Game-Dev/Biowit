@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Biowit">
         <activity android:name=".MM_Profile" />
+<<<<<<< HEAD
         <activity android:name=".Bio_ForgetPass" />
+=======
+>>>>>>> 3b72fec56454fb1cd9921ce3b08e8274d7d13a39
         <activity android:name=".Bio_SignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MM_Settings" />

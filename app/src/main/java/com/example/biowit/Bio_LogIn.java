@@ -1,10 +1,8 @@
 package com.example.biowit;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,10 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Bio_LogIn extends AppCompatActivity {
@@ -43,76 +38,49 @@ public class Bio_LogIn extends AppCompatActivity {
         AlertDialog.Builder alert_forget_pass = new AlertDialog.Builder(this);
         LayoutInflater inflater_alert = this.getLayoutInflater();
 
-        btn_Log_In.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // data extraction and validation
-                if(txtbx_Username.getText().toString().isEmpty()){ // gives error message when no username or email address input
-                    txtbx_Username.setError("Email Address is missing."); // error message
-                    return;
-                }
-                if(txtbx_Password.getText().toString().isEmpty()){ // gives error message when no password input
-                    txtbx_Password.setError("Password is missing."); // error message
-                    return;
-                }
-                // successful account log in
-                FbaseAuth_LI.signInWithEmailAndPassword(txtbx_Username.getText().toString(),txtbx_Password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        startActivity(new Intent(getApplicationContext(), MM_Play.class));
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() { //
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Bio_LogIn.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
+        btn_Log_In.setOnClickListener(v -> {
+            // data extraction and validation
+            if(txtbx_Username.getText().toString().isEmpty()){ // condition when email address textbox is not filled,
+                txtbx_Username.setError("Email Address is missing."); // error message shows
+                return;
             }
+            if(txtbx_Password.getText().toString().isEmpty()){ // gives error message when no password textbox is not filled,
+                txtbx_Password.setError("Password is missing."); // error message shows
+                return;
+            }
+
+            // successful account log in
+            FbaseAuth_LI.signInWithEmailAndPassword(txtbx_Username.getText().toString(),txtbx_Password.getText().toString())
+                    .addOnSuccessListener(authResult -> { startActivity(new Intent(getApplicationContext(), MM_Play.class));
+                finish();
+            }).addOnFailureListener(e -> Toast.makeText(Bio_LogIn.this, e.getMessage(), Toast.LENGTH_LONG).show()); // error message shows when log-in fails.
         });
 
-        btn_Forget_Pass.setOnClickListener(new View.OnClickListener() {
-            // When "Forget Password" is clicked, an alert dialog will appear.
-            @Override
-            public void onClick(View v) {
+        // When "Forget Password" is clicked, an alert dialog will appear.
+        btn_Forget_Pass.setOnClickListener(v -> {
 
-                View view = inflater_alert.inflate(R.layout.alert_forget_pass, null);
-                alert_forget_pass.setTitle("Forget Password ?")
-                        .setMessage("Enter your Email Address to get a Password Reset link.")
-                        .setPositiveButton("Reset", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
+            View view = inflater_alert.inflate(R.layout.alert_forget_pass, null);
+            alert_forget_pass.setTitle("Forget Password ?")
+                    .setMessage("Enter your Email Address to get a Password Reset link.")
+                    .setPositiveButton("Reset", (dialog, which) -> {
 
-                                TextInputEditText txtbx_FP_Email = view.findViewById(R.id.txtbx_FP_Email);
-                                if(txtbx_FP_Email.getText().toString().isEmpty()) {
-                                    txtbx_FP_Email.setError("Required Field");
-                                    return;
-                                }
-                                FbaseAuth_LI.sendPasswordResetEmail(txtbx_FP_Email.getText().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(Bio_LogIn.this, "Password Reset Link Sent", Toast.LENGTH_LONG).show();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull  Exception e) {
-                                        Toast.makeText(Bio_LogIn.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                                    }
-                                });
-                            }
-                        }).setNegativeButton("Cancel", null)
-                        .setView(view)
-                        .create().show();
-            }
+                        TextInputEditText txtbx_FP_Email = view.findViewById(R.id.txtbx_FP_Email);
+                        if (txtbx_FP_Email.getText().toString().isEmpty()) { // when the email address textbox is not filled, an error message shows.
+                            txtbx_FP_Email.setError("Required Field");
+                            return;
+                        }
+
+                        FbaseAuth_LI.sendPasswordResetEmail(txtbx_FP_Email.getText().toString())
+                                // When email address is valid, a successful message shows.
+                                .addOnSuccessListener(aVoid -> Toast.makeText(Bio_LogIn.this, "Password Reset Link Sent", Toast.LENGTH_LONG).show())
+                                // When email address is invalid, an error message shows.
+                                .addOnFailureListener(e -> Toast.makeText(Bio_LogIn.this, e.getMessage(), Toast.LENGTH_LONG).show());
+                    }).setNegativeButton("Cancel", null) // will cancel the password reset
+                    .setView(view)
+                    .create().show();
         });
 
-        btn_Sign_Up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Sign_Up_open = new Intent(Bio_LogIn.this, Bio_SignUp.class);
-                startActivity(Sign_Up_open);
-            }
-        });
+        btn_Sign_Up.setOnClickListener(v -> startActivity(new Intent(Bio_LogIn.this, Bio_SignUp.class)));
     }
 
     // when the user already logged in in the app, they will go directly to the game.

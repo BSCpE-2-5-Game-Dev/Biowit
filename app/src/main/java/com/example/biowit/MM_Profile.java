@@ -1,5 +1,6 @@
 package com.example.biowit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,8 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MM_Profile extends AppCompatActivity {
+
+    FirebaseDatabase FbDbase;
+    DatabaseReference DbReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,21 @@ public class MM_Profile extends AppCompatActivity {
         Button btn_Log_Out = findViewById(R.id.btn_Log_Out);
         Button btn_PR_Back = findViewById(R.id.btn_PR_Back);
         FirebaseAuth FbAuth_PR = FirebaseAuth.getInstance(); // database class declaration
+        FbDbase = FirebaseDatabase.getInstance();
+        DbReference = FbDbase.getReference();
+
+        DbReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //retrieve user info from the database
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //When email is not verified, a message and button will appear.
         if(!FbAuth_PR.getCurrentUser().isEmailVerified()){
@@ -50,9 +74,7 @@ public class MM_Profile extends AppCompatActivity {
         btn_Log_Out.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(), Bio_LogIn.class));
-            finish();
         });
-
         //returns to the Home Screen.
         btn_PR_Back.setOnClickListener(v -> finish());
     }

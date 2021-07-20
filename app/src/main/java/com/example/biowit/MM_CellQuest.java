@@ -24,20 +24,8 @@ public class MM_CellQuest extends AppCompatActivity {
         ImageButton imgbtn_Achievements = findViewById(R.id.imgbtn_Achievements);
         ImageButton imgbtn_Play = findViewById(R.id.imgbtn_Play);
         ImageButton imgbtn_Leaderboard = findViewById(R.id.imgbtn_Leaderboard);
-        ImageButton imgbtn_Settings = findViewById(R.id.imgbtn_Settings);
-        ImageButton imgbtn_Profile = findViewById(R.id.imgbtn_Profile);
 
         // the "finish()" function will disable the back button to go back in previous activity.
-
-        imgbtn_Profile.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), MM_Profile.class));
-            finish();
-        });
-
-        imgbtn_Settings.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), MM_Settings.class));
-            finish();
-        });
 
         imgbtn_Shop.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Shop.class));

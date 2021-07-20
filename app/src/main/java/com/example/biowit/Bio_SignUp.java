@@ -18,90 +18,127 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
 public class Bio_SignUp extends AppCompatActivity {
 
 
-    EditText txtbx_SU_FullName, txtbx_SU_Email, txtbx_SU_Pass, txtbx_SU_ConfirmPass; // edit text declarations.
-    Button btn_Register; // button/s declaration/s.
-    FirebaseAuth FbaseAuth_SU; //database declaration
+    EditText txtbx_SU_FullName, txtbx_SU_CPNum, txtbx_SU_Email, txtbx_SU_Pass, txtbx_SU_ConfirmPass; // edit text declarations
+    Button btn_Register; // button/s declaration/s
+    ImageButton btn_SU_Back;
+    FirebaseAuth FbaseAuth_SU; //for authentication
+    FirebaseDatabase rootNode; // for realtime database
+    DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // hides the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide(); // hides the action bar.
+        getSupportActionBar().hide(); // hides the action bar
 
         setContentView(R.layout.activity_bio_sign_up);
 
         txtbx_SU_FullName = findViewById(R.id.txtbx_SU_FullName);
         txtbx_SU_Email = findViewById(R.id.txtbx_SU_Email);
+        txtbx_SU_CPNum = findViewById(R.id.txtbx_SU_CPNum);
         txtbx_SU_Pass = findViewById(R.id.txtbx_SU_Pass);
         txtbx_SU_ConfirmPass = findViewById(R.id.txtbx_SU_ConfirmPass);
         btn_Register = findViewById(R.id.btn_Register);
-        ImageButton btn_SU_Back = findViewById(R.id.btn_SU_Back);
+        btn_SU_Back = findViewById(R.id.btn_SU_Back);
 
         FbaseAuth_SU = FirebaseAuth.getInstance();
-
-        btn_SU_Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        rootNode = FirebaseDatabase.getInstance("https://biowit-log-in-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        reference = rootNode.getReference("users");
 
         btn_Register.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
-                String FullName = txtbx_SU_FullName.getText().toString();
-                String Email = txtbx_SU_Email.getText().toString();
-                String Password = txtbx_SU_Pass.getText().toString();
+
+                String fullname = txtbx_SU_FullName.getText().toString();
+                String email = txtbx_SU_Email.getText().toString();
+                String cpnum = txtbx_SU_CPNum.getText().toString();
+                String password = txtbx_SU_Pass.getText().toString();
                 String ConPassword = txtbx_SU_ConfirmPass.getText().toString();
+                String UserID = FbaseAuth_SU.getUid();
+                UserHelper UHelper = new UserHelper(fullname, cpnum, email, password);
 
-                if(FullName.isEmpty()){ // condition if full name field is empty,
+                if(fullname.isEmpty()){ // condition if full name field is empty,
                     txtbx_SU_FullName.setError("This field cannot be empty."); // this error message will be shown.
-                    if(!FullName.matches("^([A-Z][a-z]*((\\s)))+[A-Z][a-z]*$")){
-                        txtbx_SU_FullName.setError("Your Full Name is invalid."); // this error message will be shown.
-                        return;
-                    }
                     return;
                 }
 
-                if(Email.isEmpty()){ // condition if Email address field is empty,
-                    txtbx_SU_Email.setError("This field cannot be empty"); // this error message will be shown.
-                    if(!Email.matches(" ^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+(?:\\\\.[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\\\.[a-zA-Z0-9-]+)*$")){
-                        txtbx_SU_Email.setError("Your Email Address is invalid."); // this error message will be shown.
-                        return;
-                    }
+                if(cpnum.isEmpty()){ // condition if full name field is empty,
+                    txtbx_SU_CPNum.setError("This field cannot be empty."); // this error message will be shown.
                     return;
                 }
 
-                if(Password.isEmpty()){ // condition if password field is empty,
-                    txtbx_SU_Pass.setError("This field cannot be empty"); // this error message will be shown.
+                if(email.isEmpty()){ // condition if full name field is empty,
+                    txtbx_SU_Email.setError("This field cannot be empty."); // this error message will be shown.
                     return;
                 }
 
-                if (!ConPassword.equals(Password)){ // condition if the confirm password is not equals to password,
+                if(password.isEmpty()){ // condition if full name field is empty,
+                    txtbx_SU_Pass.setError("This field cannot be empty."); // this error message will be shown.
+                    return;
+                }
+
+                if(ConPassword.isEmpty()){ // condition if full name field is empty,
+                    txtbx_SU_ConfirmPass.setError("This field cannot be empty."); // this error message will be shown.
+                    return;
+                }
+
+                if (!ConPassword.equals(password)){ // condition if the confirm password is not equals to password,
                     txtbx_SU_ConfirmPass.setError("Password does not match."); // this error message will be shown.
                     return;
                 }
 
-                Toast.makeText(Bio_SignUp.this, "Data Validated", Toast.LENGTH_LONG).show(); // notification that data is validated.
+                // notification that says the data is validated.
+                Toast.makeText(Bio_SignUp.this, "Data Validated", Toast.LENGTH_LONG).show();
 
-                FbaseAuth_SU.createUserWithEmailAndPassword(Email,Password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                //Email address and password authentication in the database.
+                FbaseAuth_SU.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+
                     @Override
                     public void onSuccess(AuthResult authResult) { // send the user to the log - in screen.
-                        startActivity(new Intent(getApplicationContext(), Bio_LogIn.class));
-                        finish();
+
+                        reference.child(UserID).setValue(UHelper).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                            @Override
+                            public void onSuccess(Void unused) { // notification that the user was successfully registered.
+                                Toast.makeText(Bio_SignUp.this, "Sign - up Successfully!", Toast.LENGTH_LONG).show();
+                            }
+
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {  // when user failed to sign up, an error message shows.
+                                Toast.makeText(Bio_SignUp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+
+                        startActivity(new Intent(Bio_SignUp.this, Bio_LogIn.class));
                     }
+
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) { // an error when email and pass is wrong or invalid.
                         Toast.makeText(Bio_SignUp.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+            }
+        });
+
+        btn_SU_Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

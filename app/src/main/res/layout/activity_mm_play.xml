@@ -12,9 +12,9 @@
         android:id="@+id/imgbtn_Settings"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:background="@drawable/settings_btn"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,32 +24,30 @@
         android:id="@+id/lbl_Cell_Points"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:text="9999999x"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/img_Cell_Points"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_Cell_Points" />
 
     <ImageView
         android:id="@+id/img_Cell_Points"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/cell_points_large"
-        app:layout_constraintStart_toEndOf="@+id/imgbtn_Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imgbtn_Profile"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/profile_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,10 +55,12 @@
     <TextView
         android:id="@+id/lbl_Play"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="175dp"
+        android:fontFamily="@font/bungee"
         android:text="Chapter Select"
-        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -70,8 +70,8 @@
         android:id="@+id/imgbtn_Shop"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/shop_btn"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,15 +84,15 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/achievements_btn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtn_Play"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtn_Cell_Quest"
         app:layout_constraintStart_toEndOf="@+id/imgbtn_Shop" />
 
     <ImageButton
         android:id="@+id/imgbtn_Leaderboard"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/leaderboard_btn"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,18 +106,7 @@
         android:background="@drawable/mastery_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgbtn_Leaderboard"
-        app:layout_constraintStart_toEndOf="@+id/imgbtn_Play" />
-
-    <ImageButton
-        android:id="@+id/imgbtn_Play"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="32dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5 "
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_Achievements" />
 
     <ImageButton
         android:id="@+id/imgbtn_Chapter_Select"

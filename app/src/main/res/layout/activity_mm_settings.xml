@@ -15,18 +15,21 @@
         android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/press_start_2p"
         android:text="About Us"
-        android:textColor="@color/teal_700"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/imgbtn_About_Us"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/lbl_Settings"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/bungee"
         android:text="Settings"
+        android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -37,8 +40,8 @@
         android:id="@+id/imgbtn_ST_Back"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/back_btn"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,8 +51,8 @@
         android:id="@+id/imgbtn_About_Us"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/about_us_btn"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,13 +62,15 @@
         android:id="@+id/swch_ST_Music"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="35dp"
         android:text="Music"
+        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_Settings" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Settings"
+        android:checked="true"/>
 
     <Switch
         android:id="@+id/swch_ST_SoundFX"
@@ -73,21 +78,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Sound FX"
+        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swch_ST_Music" />
+        app:layout_constraintTop_toBottomOf="@+id/swch_ST_Music"
+        android:checked="true"/>
 
     <Switch
         android:id="@+id/swch_ST_Vibrations"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:clickable="false"
         android:text="Vibrations"
+        android:textColor="#696969"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swch_ST_SoundFX" />
 
@@ -96,10 +105,12 @@
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:clickable="false"
         android:text="Hint"
+        android:textColor="#696969"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swch_ST_Vibrations" />
 
@@ -108,10 +119,12 @@
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:clickable="false"
         android:text="Notifications"
+        android:textColor="#696969"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swch_ST_Hint" />
 

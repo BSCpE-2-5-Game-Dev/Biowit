@@ -144,7 +144,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_FullName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_CPNum" />
 
             <ImageButton
                 android:id="@+id/btn_SU_Back"
@@ -158,6 +158,21 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_Register" />
+
+            <EditText
+                android:id="@+id/txtbx_SU_CPNum"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Cellphone Number"
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.537"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtbx_SU_FullName" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

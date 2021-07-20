@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-import com.example.biowit.ChapterPlay.ChapterSelect;
 
 public class MM_Play extends AppCompatActivity {
 
@@ -34,37 +34,28 @@ public class MM_Play extends AppCompatActivity {
 
         imgbtn_Profile.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Profile.class));
-            finish();
         });
 
         imgbtn_Settings.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Settings.class));
-            finish();
         });
 
         imgbtn_Shop.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Shop.class));
-            finish();
         });
 
         imgbtn_Achievements.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Achievements.class));
-            finish();
         });
 
         imgbtn_Cell_Quest.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_CellQuest.class));
-            finish();
         });
 
         imgbtn_Leaderboard.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), MM_Leaderboard.class));
-            finish();
         });
 
-        imgbtn_Chapter_Select.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), PL_ChapSelect.class));
-            finish();
-        });
+
     }
 }

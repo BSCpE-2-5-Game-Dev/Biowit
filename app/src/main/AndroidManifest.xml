@@ -28,7 +28,6 @@
         <activity android:name=".MM_Shop" />
         <activity android:name=".MM_Play" />
         <activity android:name=".MM_AboutUs" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
